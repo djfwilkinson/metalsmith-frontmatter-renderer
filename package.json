@@ -4,6 +4,7 @@
   "description": "Metalsmith plugin to iterate through the properties of an object provided as frontmatter. For each property it renders the value using a jstransformer and replaces it.",
   "main": "lib/metalsmith-frontmatter-renderer.js",
   "scripts": {
+    "lint": "eslint **/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/djfwilkinson/metalsmith-frontmatter-renderer/issues"
   },
-  "homepage": "https://github.com/djfwilkinson/metalsmith-frontmatter-renderer#readme"
+  "homepage": "https://github.com/djfwilkinson/metalsmith-frontmatter-renderer#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
 }
