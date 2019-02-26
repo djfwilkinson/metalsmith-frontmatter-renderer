@@ -1,0 +1,23 @@
+{
+  "name": "metalsmith-frontmatter-renderer",
+  "version": "0.0.1",
+  "description": "Metalsmith plugin to iterate through the properties of an object provided as frontmatter. For each property it renders the value using a jstransformer and replaces it.",
+  "main": "lib/metalsmith-frontmatter-renderer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djfwilkinson/metalsmith-frontmatter-renderer.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "frontmatter"
+  ],
+  "author": "Daniel Wilkinson <opensource@djfw.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djfwilkinson/metalsmith-frontmatter-renderer/issues"
+  },
+  "homepage": "https://github.com/djfwilkinson/metalsmith-frontmatter-renderer#readme"
+}
