@@ -21,12 +21,14 @@ You can pass some basic options to customize the behaviour:
 ```json
 {
   "key": "blocks",
+  "out": "blocks",
   "ext": "md",
   "suppressNoFilesError": false
 }
 ```
 
 - `key` is the key of the object to iterate over in the files frontmatter. Default `blocks`.
+- `out` is the key of the object to update the values upon. Default the value of `key`.
 - `ext` is a string used by [inputformat-to-jstransformer](https://github.com/jstransformers/inputformat-to-jstransformer) to determine which jstransformer to load and use. *Note: you do need to install whichever jstransformer you want to use.* Default `md`.
 - `suppressNoFilesError` is a boolean to determine the behaviour when there are no files to look check the frontmatter of. Set to `true` to prevent an error being thrown if there are no files. Default `false`.
 
