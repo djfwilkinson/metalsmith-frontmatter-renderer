@@ -82,7 +82,7 @@ metalsmith.use(fmfl({
 ## Example frontmatter
 *src/index.html*
 <pre><code class="language-html">&mdash;&mdash;&mdash;
-blocks:
+files:
     foo: &#39;# Here is some *markdown*&#39;
     bar: &#39;`blocks` will be rendered using a [jstranformer](https://github.com/jstransformers/jstransformer)&#39;
 &mdash;&mdash;&mdash;
