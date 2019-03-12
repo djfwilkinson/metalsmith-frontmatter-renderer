@@ -41,9 +41,9 @@ describe('metalsmith-frontmatter-renderer', function () {
         files.should.match({
           'index.html': {
             'blocks': {
-              'bar': '<p>Markdown <em>bar</em></p>',
-              'foo': '<h1><code>Markdown</code> foo</h1>',
-              'all': '<p>&lt;p&gt;Html!&lt;/p&gt;</p>'
+              'bar': '<p>Markdown <em>bar</em></p>\n',
+              'foo': '<h1><code>Markdown</code> foo</h1>\n',
+              'all': '<p>&lt;div&gt;Html!&lt;/div&gt;</p>\n'
             }
           }
         })
@@ -95,9 +95,9 @@ describe('metalsmith-frontmatter-renderer', function () {
         files.should.match({
           'index.html': {
             'rendered': {
-              'bar': '<p>Markdown <em>bar</em></p>',
-              'foo': '<h1><code>Markdown</code> foo</h1>',
-              'all': '<p>&lt;p&gt;Html!&lt;/p&gt;</p>'
+              'bar': '<p>Markdown <em>bar</em></p>\n',
+              'foo': '<h1><code>Markdown</code> foo</h1>\n',
+              'all': '<p>&lt;div&gt;Html!&lt;/div&gt;</p>\n'
             }
           }
         })
@@ -119,12 +119,12 @@ describe('metalsmith-frontmatter-renderer', function () {
             'blocks': {
               'bar': 'Markdown *bar*',
               'foo': '# `Markdown` foo',
-              'all': '<p>Html!</p>'
+              'all': '<div>Html!</div>'
             },
             'other': {
-              'bar': '<p>Markdown <em>bar</em></p>',
-              'foo': '<h1><code>Markdown</code> foo</h1>',
-              'all': '<p>&lt;p&gt;Html!&lt;/p&gt;</p>',
+              'bar': '<p>Markdown <em>bar</em></p>\n',
+              'foo': '<h1><code>Markdown</code> foo</h1>\n',
+              'all': '<p>&lt;div&gt;Html!&lt;/div&gt;</p>\n',
               'wiz': 'Another string'
             }
           }
@@ -166,7 +166,7 @@ describe('metalsmith-frontmatter-renderer', function () {
             'blocks': {
               'bar': 'Markdown *bar*',
               'foo': '# `Markdown` foo',
-              'all': '<p>Html!</p>'
+              'all': '<div>Html!</div>'
             }
           }
         })
