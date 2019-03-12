@@ -23,7 +23,8 @@ You can pass some basic options to customize the behaviour:
   "key": "blocks",
   "out": "blocks",
   "ext": "md",
-  "suppressNoFilesError": false
+  "suppressNoFilesError": false,
+  "options": {}
 }
 ```
 
@@ -31,6 +32,7 @@ You can pass some basic options to customize the behaviour:
 - `out` is the key of the object to update the values upon. Default the value of `key`.
 - `ext` is a string used by [inputformat-to-jstransformer](https://github.com/jstransformers/inputformat-to-jstransformer) to determine which jstransformer to load and use. *Note: you do need to install whichever jstransformer you want to use.* Default `md`.
 - `suppressNoFilesError` is a boolean to determine the behaviour when there are no files to look check the frontmatter of. Set to `true` to prevent an error being thrown if there are no files. Default `false`.
+- `options` is an object that will be passed to the jstransformer render function as the second parameter (options). Default to empty object `{}`.
 
 ## CLI Usage
 
@@ -52,8 +54,12 @@ or with configuration options:
   "plugins": {
     "metalsmith-frontmatter-renderer": {
       "key": "files",
+      "out": "blocks-rendered",
       "ext": "njk",
-      "suppressNoFilesError": true
+      "suppressNoFilesError": true,
+      "options": {
+        "html": true
+      }
     }
   }
 }

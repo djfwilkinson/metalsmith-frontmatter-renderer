@@ -189,4 +189,31 @@ describe('metalsmith-frontmatter-renderer', function () {
         return done()
       })
   })
+
+  it('should pass options through to the jstransformer', (done) => {
+    Metalsmith('test/fixtures')
+      .use(
+        fmr(
+          {
+            ext: 'md',
+            options: {
+              html: true
+            }
+          }
+        )
+      )
+      .build(function (err, files) {
+        should.not.exist(err)
+        files.should.match({
+          'index.html': {
+            'blocks': {
+              'bar': '<p>Markdown <em>bar</em></p>\n',
+              'foo': '<h1><code>Markdown</code> foo</h1>\n',
+              'all': '<div>Html!</div>'
+            }
+          }
+        })
+        return done()
+      })
+  })
 })
