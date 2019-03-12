@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-frontmatter-renderer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Metalsmith plugin to iterate through the properties of an object provided as frontmatter. For each property it renders the value using a jstransformer and replaces it.",
   "main": "lib/metalsmith-frontmatter-renderer.js",
   "scripts": {
