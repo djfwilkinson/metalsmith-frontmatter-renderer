@@ -4,9 +4,11 @@ blocks:
     foo: '# `Markdown` foo'
     all: '<div>Html!</div>'
 blocks-njk:
-    njk: '{{example}}'
+    njk: '{{example}}, {{override}}, {{only}}'
 other:
     bar: 'Existing string'
     wiz: 'Another string'
+override: local override
+only: local only
 ---
 <h1>This is the <code>contents</code> of the file.</h1>

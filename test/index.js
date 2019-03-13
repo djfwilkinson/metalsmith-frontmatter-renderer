@@ -217,11 +217,12 @@ describe('metalsmith-frontmatter-renderer', function () {
       })
   })
 
-  it('should pass the metalsmith metadata as a render parameter', (done) => {
+  it('should mix local metadata with global metadata and pass the metalsmith metadata as a render parameter', (done) => {
     Metalsmith('test/fixtures')
       .metadata(
         {
-          example: 'my metadata'
+          example: 'global example',
+          override: 'global override'
         }
       )
       .use(
@@ -237,7 +238,7 @@ describe('metalsmith-frontmatter-renderer', function () {
         files.should.match({
           'index.html': {
             'blocks-njk': {
-              'njk': 'my metadata'
+              'njk': 'global example, local override, local only'
             }
           }
         })
