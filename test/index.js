@@ -216,4 +216,32 @@ describe('metalsmith-frontmatter-renderer', function () {
         return done()
       })
   })
+
+  it('should pass the metalsmith metadata as a render parameter', (done) => {
+    Metalsmith('test/fixtures')
+      .metadata(
+        {
+          example: 'my metadata'
+        }
+      )
+      .use(
+        fmr(
+          {
+            ext: 'njk',
+            key: 'blocks-njk'
+          }
+        )
+      )
+      .build(function (err, files) {
+        should.not.exist(err)
+        files.should.match({
+          'index.html': {
+            'blocks-njk': {
+              'njk': 'my metadata'
+            }
+          }
+        })
+        return done()
+      })
+  })
 })
