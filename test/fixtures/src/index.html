@@ -5,6 +5,11 @@ blocks:
     all: '<div>Html!</div>'
 blocks-njk:
     njk: '{{example}}, {{override}}, {{only}}'
+order:
+    a: 'This is A.'
+    b: 'This is B, then {{orderOut.a}}'
+    c: 'This is C, and D ({{orderOut.d}}) should be blank'
+    d: 'This is D, {{orderOut.c}}, {{orderOut.b}}, {{orderOut.a}}'
 other:
     bar: 'Existing string'
     wiz: 'Another string'

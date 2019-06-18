@@ -245,4 +245,37 @@ describe('metalsmith-frontmatter-renderer', function () {
         return done()
       })
   })
+
+  it('should update metadata as individual blocks are rendered to their `out`, so that future blocks can use that data', (done) => {
+    Metalsmith('test/fixtures')
+      .use(
+        fmr(
+          {
+            ext: 'njk',
+            key: 'order',
+            out: 'orderOut'
+          }
+        )
+      )
+      .build(function (err, files) {
+        should.not.exist(err)
+        files.should.match({
+          'index.html': {
+            'orderOut': {
+              'a': 'This is A.',
+              'b': 'This is B, then This is A.',
+              'c': 'This is C, and D () should be blank',
+              'd': 'This is D, This is C, and D () should be blank, This is B, then This is A., This is A.'
+            }
+          },
+          'index2.html': {
+            'orderOut': {
+              'c': 'This is C, and D () should be blank',
+              'd': 'This is D, This is C, and D () should be blank, , '
+            }
+          }
+        })
+        return done()
+      })
+  })
 })
